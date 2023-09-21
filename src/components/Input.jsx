@@ -8,19 +8,19 @@ export default function Input() {
 
   function converterWtoDbm(w) {
     const dbm = 10 * Math.log10(1000 * w);
-    return dbm;
+    return +dbm.toFixed(2);
   }
   function converterDbmToW(dbm) {
     const w = 10 ** ((dbm - 30) / 10);
     console.log(w);
-    return w;
+    return +w.toFixed(2);
   }
 
-  const valorDbm = converterWtoDbm(valor);
+  const valorDbm = +converterWtoDbm(valor).toFixed(2);
   const valorParaAntenaDbm = valorDbm - valorPerdaCabos;
   const valorParaAntenaW = converterDbmToW(valorParaAntenaDbm);
-  const g = 10 ** (ganhoAntena / 10);
-  const eirp = g * valorParaAntenaW;
+  const g = +(10 ** (ganhoAntena / 10).toFixed(2));
+  const eirp = +(g * valorParaAntenaW.toFixed(2));
 
   return (
     <div>
