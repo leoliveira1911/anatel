@@ -19,8 +19,8 @@ export default function Input() {
   const valorDbm = +converterWtoDbm(valor).toFixed(2);
   const valorParaAntenaDbm = valorDbm - valorPerdaCabos;
   const valorParaAntenaW = converterDbmToW(valorParaAntenaDbm);
-  const g = +(10 ** (ganhoAntena / 10).toFixed(2));
-  const eirp = +(g * valorParaAntenaW.toFixed(2));
+  const g = +(10 ** (ganhoAntena / 10)).toFixed(4);
+  const eirp = +(g * valorParaAntenaW).toFixed(2);
 
   return (
     <div>
@@ -60,15 +60,15 @@ export default function Input() {
       <h3>D = 1,3 x (EIRP/Slim) ^0,5 </h3>
       <h3>D = 1,3 x ({eirp} / 2) ^0,5</h3>
       <h3>D = 1,3 x ({eirp / 2}) ^0,5</h3>
-      <h3>D = 1,3 x ({(eirp / 2) ** 0.5}) ^0,5</h3>
-      <h3>D = {1.3 * (eirp / 2) ** 0.5}</h3>
+      <h3>D = 1,3 x ({+((eirp / 2) ** 0.5).toFixed(3)}) ^0,5</h3>
+      <h3>D = {1.3 * +((eirp / 2) ** 0.5).toFixed(3)}</h3>
 
       <h3>D para exposição ocupacional: </h3>
       <h3>D = 1,3 x (EIRP/Slim) ^0,5 </h3>
       <h3>D = 1,3 x ({eirp} / 10) ^0,5</h3>
       <h3>D = 1,3 x ({eirp / 10}) ^0,5</h3>
-      <h3>D = 1,3 x ({(eirp / 10) ** 0.5}) ^0,5</h3>
-      <h3>D = {1.3 * (eirp / 10) ** 0.5}</h3>
+      <h3>D = 1,3 x ({((eirp / 10) ** 0.5).toFixed(3)}) ^0,5</h3>
+      <h3>D = {(1.3 * (eirp / 10) ** 0.5).toFixed(3)}</h3>
     </div>
   );
 }
