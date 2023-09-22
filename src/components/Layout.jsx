@@ -61,7 +61,11 @@ export default function Layout() {
         Ganho da antena G = 10 ^ ({ganhoAntena}/10) = <mark>{g}</mark>
       </h3>
       <h3>
-        EIRP = Potência x G = {valorParaAntenaW} x {g} = <mark>{eirp}</mark> W
+        EIRP = Potência x G ={" "}
+        <mark>
+          {valorParaAntenaW} x {g}
+        </mark>{" "}
+        = <mark>{eirp}</mark> W
       </h3>
 
       <h3>D para população geral: </h3>
