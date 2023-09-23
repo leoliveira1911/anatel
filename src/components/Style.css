@@ -8,9 +8,10 @@ mark {
 
 .layout {
   background-color: #0d1b2a;
-  height: 100vh;
+  height: min-content;
   margin: 0px;
   color: aliceblue;
+  padding: 20px;
 }
 
 .box {
