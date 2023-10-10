@@ -54,11 +54,11 @@ export default function Layout() {
       potenciaOperacaoEAntena.push(
         <>
           <p>
-            Potência de operação frequencia {el.frequencia}={" "}
+            Potência de operação frequencia {el.frequencia} MHz ={" "}
             <mark>{valorDbm}</mark> dBm
           </p>
           <p>
-            Potência entregue à antena frequencia {el.frequencia} ={" "}
+            Potência entregue à antena frequencia {el.frequencia} MHz ={" "}
             <mark>{valorParaAntenaDbm}</mark> dBm
           </p>
           <br />
@@ -68,7 +68,7 @@ export default function Layout() {
       dPopGeral.push(
         <>
           <p>
-            Calculando-se EIRP para a frequência F={el.frequencia}, tem-se:{" "}
+            Calculando-se EIRP para a frequência F={el.frequencia} MHz, tem-se:{" "}
           </p>
           {/* <p>
             Potência entregue à antena = <mark>{valorParaAntenaW}</mark> W
@@ -100,7 +100,7 @@ export default function Layout() {
         <div>
           <p>Conforme já calculado anteriormente:</p>
           <p>
-            EIRP para a frequência F={el.frequencia}MHz ={" "}
+            EIRP para a frequência F={el.frequencia} MHz ={" "}
             <mark>
               {valorParaAntenaW} x {g} = {eirp}
             </mark>
