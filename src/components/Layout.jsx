@@ -118,14 +118,16 @@ export default function Layout() {
         </div>
       );
     });
-    return [
-      <h1>Dados tabela item 5</h1>,
-      <div className="box">{potenciaOperacaoEAntena}</div>,
-      textoBase,
-      <div className="box">{dPopGeral}</div>,
-      textoExposicaoOcupacional,
-      <div className="box">{dExposicaoOcupacional}</div>,
-    ];
+    if (valor.length > 0) {
+      return [
+        <h1>Dados tabela item 5</h1>,
+        <div className="box">{potenciaOperacaoEAntena}</div>,
+        textoBase,
+        <div className="box">{dPopGeral}</div>,
+        textoExposicaoOcupacional,
+        <div className="box">{dExposicaoOcupacional}</div>,
+      ];
+    }
   }
 
   function renderFreqs(valor) {
