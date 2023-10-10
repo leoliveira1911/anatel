@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Input from "./Input";
+import { isElementOfType } from "react-dom/test-utils";
 
 export default function Layout() {
   const [valor, setValor] = useState([]);
@@ -43,7 +44,9 @@ export default function Layout() {
     );
     const textoExposicaoOcupacional = <h1>D para exposição ocupacional</h1>;
     const dPopGeral = [];
+    let dMaxPopGeral = 0;
     const dExposicaoOcupacional = [];
+    let dMaxExpOcupacional = 0;
     const potenciaOperacaoEAntena = [];
     valor.map((el) => {
       const valorDbm = +converterWtoDbm(el.potencia).toFixed(2);
@@ -95,7 +98,9 @@ export default function Layout() {
           <br />
         </>
       );
-
+      if ((1.3 * (eirp / 2) ** 0.5).toFixed(2) >= dMaxPopGeral) {
+        dMaxPopGeral = (1.3 * (eirp / 2) ** 0.5).toFixed(2);
+      }
       dExposicaoOcupacional.push(
         <div>
           <p>Conforme já calculado anteriormente:</p>
@@ -117,6 +122,9 @@ export default function Layout() {
           <br />
         </div>
       );
+      if ((1.3 * (eirp / 10) ** 0.5).toFixed(2) >= dMaxExpOcupacional) {
+        dMaxExpOcupacional = (1.3 * (eirp / 10) ** 0.5).toFixed(2);
+      }
     });
     if (valor.length > 0) {
       return [
@@ -126,6 +134,12 @@ export default function Layout() {
         <div className="box">{dPopGeral}</div>,
         textoExposicaoOcupacional,
         <div className="box">{dExposicaoOcupacional}</div>,
+        <h2>D Máx </h2>,
+        <div className="box"> D Max Pop Geral = {dMaxPopGeral}</div>,
+        <div className="box">
+          {" "}
+          D Max Exposição Ocupacional = {dMaxExpOcupacional}
+        </div>,
       ];
     }
   }
