@@ -135,10 +135,14 @@ export default function Layout() {
         textoExposicaoOcupacional,
         <div className="box">{dExposicaoOcupacional}</div>,
         <h2>D Máx </h2>,
-        <div className="box"> D Max Pop Geral = {dMaxPopGeral}</div>,
         <div className="box">
           {" "}
-          D Max Exposição Ocupacional = {dMaxExpOcupacional}
+          D Max Pop Geral = {dMaxPopGeral} - Diâmetro = {dMaxPopGeral * 2}
+        </div>,
+        <div className="box">
+          {" "}
+          D Max Exposição Ocupacional = {dMaxExpOcupacional} - Diâmetro ={" "}
+          {dMaxExpOcupacional * 2}
         </div>,
       ];
     }
