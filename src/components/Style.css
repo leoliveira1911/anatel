@@ -18,7 +18,7 @@ mark {
 .box {
   background-color: #415a77;
   width: 80%;
-  padding: 8px 0px 0px 10px;
+  padding: 10px 0px 0px 10px;
   margin: 5px auto;
   border-radius: 10px;
 }
