@@ -19,23 +19,58 @@ mark {
   background-color: #415a77;
   width: 80%;
   padding: 5px;
-  margin: auto;
+  margin: 5px auto;
   border-radius: 10px;
 }
 
 .input {
   margin: 2px;
   padding: 3px;
+  font-size: large;
 }
 
 .label {
   padding-right: 10px;
-  font-size: larger;
+  font-size: large;
 }
 
 .values {
-  width: 60px;
+  width: 90px;
   border-radius: 5px;
   background-color: rgb(223, 223, 223);
   font-size: large;
+}
+
+.resultados {
+  text-align: left;
+  font-size: large;
+}
+
+button {
+  margin: 2px;
+  padding: 2px 7px;
+  font-size: medium;
+  border-radius: 30px;
+  border-width: 0px;
+}
+
+.freqList {
+  display: flex;
+  flex-direction: column;
+  background-color: #415a77;
+  margin: 5px;
+  padding: 10px 5px 10px 5px;
+  width: fit-content;
+  border-radius: 10px;
+}
+
+.gridFreqs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+h2 {
+  margin: 0px;
+  font-family: Courier, monospace;
 }
